@@ -1,4 +1,4 @@
-name: individual build
+name: parallel build
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   Cart-run:
-    if: github.workflow == 'individual build'
+    if: github.workflow == 'parallel build'
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -20,7 +20,7 @@ jobs:
             command: npm run test-addToCart
 
   Reg-run:
-    if: github.workflow == 'individual build'
+    if: github.workflow == 'parallel build'
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout

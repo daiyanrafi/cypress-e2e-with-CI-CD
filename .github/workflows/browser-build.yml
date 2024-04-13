@@ -2,6 +2,7 @@ name: browser change build
 on: push
 jobs:
   cypress-run:
+    if: github.workflow == 'parallel build'  # Modify the condition here
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -12,3 +13,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
             browser: chrome
+

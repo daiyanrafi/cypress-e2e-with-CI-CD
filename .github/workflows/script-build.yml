@@ -2,6 +2,7 @@ name: indvidual build
 on: push
 jobs:
   cypress-run:
+    if: github.workflow == 'parallel build'  # Modify the condition here
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
