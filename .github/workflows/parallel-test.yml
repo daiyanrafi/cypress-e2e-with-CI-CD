@@ -1,7 +1,13 @@
-name: indvidual build
-on: push
+name: individual build
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   Cart-run:
+    if: github.workflow == 'individual build'
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -11,9 +17,10 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-            commadn: npm run test-addToCart
+            command: npm run test-addToCart
 
   Reg-run:
+    if: github.workflow == 'individual build'
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -23,4 +30,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-            commadn: npm run test-test-flow
+            command: npm run test-test-flow
