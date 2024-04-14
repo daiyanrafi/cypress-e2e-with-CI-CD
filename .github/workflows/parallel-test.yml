@@ -22,7 +22,7 @@ jobs:
       - name: Cypress report test for cart
         uses: actions/upload-artifact@v4
         with:
-          name: HTML Report
+          name: HTML Report - Cart
           path: cypress/reports/html
 
   Reg-run:
@@ -41,5 +41,5 @@ jobs:
       - name: Cypress report test for reg
         uses: actions/upload-artifact@v4
         with:
-          name: HTML Report
+          name: HTML Report - Reg
           path: cypress/reports/html
