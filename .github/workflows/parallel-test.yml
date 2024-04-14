@@ -19,7 +19,7 @@ jobs:
         with:
             command: npm run test-addToCart
 
-      - name: Cypress report test
+      - name: Cypress report test-1
         uses: actions/upload-artifact@v4
         with:
           name: HTML Report
@@ -38,7 +38,7 @@ jobs:
         with:
             command: npm run test-flow
 
-      - name: Cypress report test
+      - name: Cypress report test-2
         uses: actions/upload-artifact@v4
         with:
           name: HTML Report
