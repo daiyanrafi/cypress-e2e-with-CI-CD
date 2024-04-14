@@ -22,7 +22,7 @@ jobs:
       - name: Cypress report test for cart
         uses: actions/upload-artifact@v4
         with:
-          name: HTML Report - Cart
+          name: HTML Report - Cart 1
           path: cypress/reports/html
 
   Reg-run:
@@ -39,7 +39,8 @@ jobs:
             command: npm run test-flow
 
       - name: Cypress report test for reg
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: HTML Report - Reg
+          name: HTML Report - Reg 1
           path: cypress/reports/html
